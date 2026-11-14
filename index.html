@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080d1b"><title>SOHEL MEDIA PANEL</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="app">
+<header><div class="brandmark">S</div><div><div class="brand">SOHEL <span>MEDIA</span></div><small>PREMIUM MARKETING PANEL</small></div><button id="logout" class="ghost hidden">Logout</button></header>
+<main>
+<section id="auth" class="panel auth">
+<div class="eyebrow">WELCOME TO YOUR GROWTH HUB</div><h1>Grow smarter.<br><span>Manage everything.</span></h1>
+<p class="muted">Sign in or create your customer account.</p>
+<div class="tabs"><button class="tab active" data-tab="login">Login</button><button class="tab" data-tab="register">Create account</button></div>
+<form id="authForm"><label>Email</label><input id="email" type="email" required placeholder="you@example.com"><label>Password</label><input id="password" type="password" minlength="10" required placeholder="At least 10 characters"><button class="primary full" id="authSubmit">Login securely</button></form>
+<div id="authMsg" class="msg"></div>
+</section>
+<section id="dashboard" class="hidden">
+<div class="welcome"><div><div class="eyebrow">CUSTOMER OVERVIEW</div><h1>Dashboard</h1><p class="muted" id="welcomeEmail"></p></div><div class="avatar">SM</div></div>
+<div class="stats"><div class="stat"><small>WALLET BALANCE</small><strong id="balance">₹0.00</strong></div><div class="stat"><small>YOUR ORDERS</small><strong id="orderCount">0</strong></div></div>
+<div class="panel"><div class="sectionHead"><div><div class="eyebrow">PLACE AN ORDER</div><h2>Available services</h2></div><span class="pill">LIVE PANEL</span></div>
+<form id="orderForm"><label>Choose service</label><select id="service"></select><label>Post / profile URL (HTTPS)</label><input id="link" type="url" required placeholder="https://..."><label>Quantity</label><input id="quantity" type="number" min="1" value="100" required><div class="priceLine"><span>Estimated total</span><strong id="estimate">₹0.00</strong></div><button class="primary full">Submit order</button></form><div id="orderMsg" class="msg"></div></div>
+<div class="panel"><div class="sectionHead"><div><div class="eyebrow">WALLET</div><h2>Add funds</h2></div></div><p class="muted small">Manual UPI payment request. Wallet credit happens only after admin verification.</p><div class="upi" id="upi"></div><form id="walletForm"><label>Amount (₹)</label><input id="amount" type="number" min="10" max="50000" required placeholder="500"><label>Payment UTR / reference</label><input id="reference" required placeholder="Enter transaction reference"><button class="secondary full">Send payment request</button></form><div id="walletMsg" class="msg"></div></div>
+<div class="panel"><div class="eyebrow">ACTIVITY</div><h2>Recent orders</h2><div id="orders" class="list"></div></div>
+<div id="adminPanel" class="panel hidden"><div class="eyebrow">CONTROL CENTER</div><h2>Admin tools</h2><p class="muted small">Review wallet requests and manage your panel.</p><button class="secondary full" id="refreshPayments">Refresh pending payments</button><div id="payments" class="list"></div><h3>Set service selling price</h3><form id="serviceForm"><input id="svcName" placeholder="Service name" required><input id="svcCategory" placeholder="Category" required><input id="svcPrice" type="number" min="0" step=".01" placeholder="Price per 1,000" required><input id="svcMin" type="number" min="1" value="10" placeholder="Minimum quantity"><input id="svcMax" type="number" min="1" value="10000" placeholder="Maximum quantity"><button class="secondary full">Add service</button></form><div id="adminMsg" class="msg"></div></div>
+</section>
+</main>
+<footer>SOHEL MEDIA PANEL <span>•</span> Secure mobile experience</footer>
+</div>
+<script src="/app.js"></script>
+</body></html>
